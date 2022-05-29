@@ -20,34 +20,46 @@ const Home: NextPage<Props> = ({ menuData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col p-4">
-        <h2 className="text-center mb-4 text-2xl font-bold">Menu</h2>
+      <main className="flex flex-col p-4 items-center">
+        <h2 className="mb-4 text-2xl font-bold">Menu</h2>
 
-        <ul>
+        <ul className="max-w-2xl">
           {menuData.MenuSections.map((section) => (
             <li className="mb-8" key={section.MenuSectionId}>
               <h2 className="font-bold text-xl mb-4">{section.Name}</h2>
-              {section.MenuItems.map((menuItem) => (
-                <div
-                  key={menuItem.PublicId}
-                  className="grid items-center gap-x-4 border-b py-4"
-                  style={{ gridTemplateColumns: "1fr max-content" }}
-                >
-                  <p className="col-start-1 row-start-1">{menuItem.Name}</p>
-                  <p className="col-start-1 row-start-2">£{menuItem.Price}</p>
-                  <p>{menuItem.Description}</p>
-                  {menuItem.ImageUrl && (
-                    <div className="flex col-start-2 row-start-1 row-end-4 rounded overflow-hidden">
-                      <Image
-                        src={menuItem.ImageUrl}
-                        alt={menuItem.Description}
-                        width="100"
-                        height="100"
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
+              {section.MenuItems.map((menuItem) => {
+                const { Price, PublicId, Name, Description, ImageUrl } =
+                  menuItem;
+
+                const formattedPrice = new Intl.NumberFormat(undefined, {
+                  style: "currency",
+                  currency: "GBP",
+                }).format(Price);
+
+                return (
+                  <div
+                    key={PublicId}
+                    className="grid items-center gap-x-4 border-b py-4"
+                    style={{ gridTemplateColumns: "1fr max-content" }}
+                  >
+                    <p className="col-start-1 row-start-1 font-bold">{Name}</p>
+                    <p className="col-start-1 row-start-2">{Description}</p>
+                    <p className="col-start-1 row-start-3">{formattedPrice}</p>
+                    {ImageUrl && (
+                      <div className="relative flex col-start-2 row-start-1 row-end-4 rounded overflow-hidden">
+                        <Image
+                          src={ImageUrl}
+                          alt={Description}
+                          layout="fixed"
+                          width="100"
+                          height="100"
+                          objectFit="cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </li>
           ))}
         </ul>
