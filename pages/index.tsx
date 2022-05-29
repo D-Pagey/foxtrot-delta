@@ -28,17 +28,21 @@ const Home: NextPage<Props> = ({ menuData }) => {
             <li className="border border-blue-500" key={section.MenuSectionId}>
               <h2>{section.Name}</h2>
               {section.MenuItems.map((menuItem) => (
-                <>
-                  <p key={menuItem.PublicId}>{menuItem.Name}</p>
+                <div key={menuItem.PublicId} className="border border-red-500">
+                  <p>{menuItem.Name}</p>
+                  <p>£{menuItem.Price}</p>
+                  <p>{menuItem.Description}</p>
                   {menuItem.ImageUrl && (
-                    <Image
-                      src={menuItem.ImageUrl}
-                      alt={menuItem.Description}
-                      width="100"
-                      height="100"
-                    />
+                    <div className="w-32 border-4">
+                      <Image
+                        src={menuItem.ImageUrl}
+                        alt={menuItem.Description}
+                        width="100%"
+                        height="100%"
+                      />
+                    </div>
                   )}
-                </>
+                </div>
               ))}
             </li>
           ))}
