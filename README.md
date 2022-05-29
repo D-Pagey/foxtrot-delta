@@ -3,3 +3,6 @@
 - use Next images
 - SSR for SEO
 - Is Tailwind really a dev dependency?
+- preserve aspect ratio
+- lazy load image
+- grid layout

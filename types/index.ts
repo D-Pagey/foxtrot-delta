@@ -54,8 +54,8 @@ type MenuItem = {
   TaxRateId: null;
   TaxValue: number;
   MenuSectionId: number;
-  ImageName: string;
-  ImageUrl: string;
+  ImageName: string | null;
+  ImageUrl: string | null;
   CellAspectRatio: number;
   CellLayoutType: number;
   ActualPrice: number;
@@ -76,8 +76,8 @@ type MenuSection = {
   IsDeleted: boolean;
   IsAvailable: boolean;
   IsHiddenFromUsers: boolean;
-  ImageName: string;
-  ImageUrl: string;
+  ImageName: string | null;
+  ImageUrl: string | null;
   CellAspectRatio: number;
   CellLayoutType: number;
   MenuSectionAvailability: {
