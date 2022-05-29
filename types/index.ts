@@ -15,7 +15,7 @@ type MenuItemOptionSetItem = {
   ImageUrl: string | null;
   CellAspectRatio: number;
   CellLayoutType: number;
-  OptionSetItemMetadata: [];
+  OptionSetItemMetadata: any[];
 };
 
 type MenuItemOptionSet = {
@@ -48,7 +48,7 @@ type MenuItem = {
   Alcohol: boolean;
   Tags: any[];
   PublicId: string;
-  isAvailable: boolean;
+  IsAvailable: boolean;
   MenuItemOptionSets: MenuItemOptionSet[];
   TaxRate: null;
   TaxRateId: null;

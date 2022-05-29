@@ -1,6 +1,14 @@
 # Foxtrot Delta
 
-This is a codenamed project to render a simple menu from an API.
+This is a codenamed project to render a simple menu from an API. You can view a deployed version here - https://foxtrot-delta.vercel.app/.
+
+## Useful scripts
+
+I use `yarn` but feel free to use `npm` equivalent scripts.
+
+- `yarn` will install dependencies
+- `yarn dev` will run a local server on http://localhost:3000/
+- `yarn test` will run the test suite
 
 ## Requirements
 
@@ -11,14 +19,6 @@ This is a codenamed project to render a simple menu from an API.
 - [x] Mobile first, responsive layout
 - [ ] Handle `isMasterOptionSet` to handle as standalone product
 - [ ] Handle ignoring `MenuSectionItem` when `isMasterOptionSet` is true
-
-### To Do
-
-- [ ] Lazy load images
-- [ ] Amend README with scripts
-- [ ] Double check initial docs
-- [ ] Add a simple snapshot test
-- [ ] Write developer docs
 
 ### Developer notes
 
