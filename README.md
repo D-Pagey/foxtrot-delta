@@ -22,12 +22,12 @@ I use `yarn` but feel free to use `npm` equivalent scripts.
 
 ### Developer notes
 
-- SSR for SEO
-- lot of data in the API response that could have taken advantage of
-- make it clear this was timeboxed
-- lazy load images
-- tailwind for ease
-- simple test for illustration purposes - no functionality so snapshot
-- could have componentised it but considering scope premature
-- could have componentised PageLayou but again premature
-- didn't have time to deal with `isMasterOptionSet`
+I would have liked to spend more time on this but my time was limited. Here are some considerations and things I would have liked to do with more time:
+
+- SSR seemed appropriate given the potential SEO benefits
+- Lots of data in the API that I could have done something with
+- I would have liked to lazy load images, especially those out of initial view
+- I added a snapshot test as there's no functionality to test
+- In a production setting, I would split the menu into manageable components. However, given the small scope, I left it in one page
+- If there were multiple pages, I would have abstracted the `Head` and meta data into a `PageLayout` component
+- With more time, I would have liked to deal with the `isMasterOptionSet`
