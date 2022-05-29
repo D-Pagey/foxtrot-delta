@@ -1,3 +1,7 @@
+# Foxtrot Delta
+
+This is a codenamed project to render a simple menu from an API.
+
 ## Requirements
 
 - [x] Render menu item name
@@ -10,13 +14,10 @@
 
 ### To Do
 
-- [ ] Use FD colours
-- [ ] Organise into comps? Check reqs?
 - [ ] Lazy load images
-- [ ] Deploy to Vercel
 - [ ] Amend README with scripts
-- [ ] Is Tailwind really a dev dependency?
 - [ ] Double check initial docs
+- [ ] Add a simple snapshot test
 - [ ] Write developer docs
 
 ### Developer notes
@@ -25,3 +26,8 @@
 - lot of data in the API response that could have taken advantage of
 - make it clear this was timeboxed
 - lazy load images
+- tailwind for ease
+- simple test for illustration purposes - no functionality so snapshot
+- could have componentised it but considering scope premature
+- could have componentised PageLayou but again premature
+- didn't have time to deal with `isMasterOptionSet`

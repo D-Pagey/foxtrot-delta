@@ -21,12 +21,14 @@ const Home: NextPage<Props> = ({ menuData }) => {
       </Head>
 
       <main className="flex flex-col p-4 items-center">
-        <h2 className="mb-4 text-2xl font-bold">Menu</h2>
+        <h2 className="mb-4 text-2xl font-bold text-fdBlue">Menu</h2>
 
         <ul className="max-w-2xl">
           {menuData.MenuSections.map((section) => (
             <li className="mb-8" key={section.MenuSectionId}>
-              <h2 className="font-bold text-xl mb-4">{section.Name}</h2>
+              <h2 className="font-bold text-xl mb-4 text-fdBlue">
+                {section.Name}
+              </h2>
               {section.MenuItems.map((menuItem) => {
                 const { Price, PublicId, Name, Description, ImageUrl } =
                   menuItem;
@@ -39,7 +41,7 @@ const Home: NextPage<Props> = ({ menuData }) => {
                 return (
                   <div
                     key={PublicId}
-                    className="grid items-center gap-x-4 border-b py-4"
+                    className="grid items-center gap-x-4 border-b py-4 px-2 cursor-pointer hover:shadow rounded"
                     style={{ gridTemplateColumns: "1fr max-content" }}
                   >
                     <p className="col-start-1 row-start-1 font-bold">{Name}</p>
