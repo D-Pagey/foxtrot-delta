@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ menuData }) => {
-  console.log(menuData);
+  // console.log(menuData);
 
   return (
     <div>
@@ -20,25 +20,29 @@ const Home: NextPage<Props> = ({ menuData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h2 className="text-red-500">Tailwind</h2>
+      <main className="flex flex-col p-4">
+        <h2 className="text-center mb-4 text-2xl font-bold">Menu</h2>
 
         <ul>
           {menuData.MenuSections.map((section) => (
-            <li className="border border-blue-500" key={section.MenuSectionId}>
-              <h2>{section.Name}</h2>
+            <li className="mb-8" key={section.MenuSectionId}>
+              <h2 className="font-bold text-xl mb-4">{section.Name}</h2>
               {section.MenuItems.map((menuItem) => (
-                <div key={menuItem.PublicId} className="border border-red-500">
-                  <p>{menuItem.Name}</p>
-                  <p>£{menuItem.Price}</p>
+                <div
+                  key={menuItem.PublicId}
+                  className="grid items-center gap-x-4 border-b py-4"
+                  style={{ gridTemplateColumns: "1fr max-content" }}
+                >
+                  <p className="col-start-1 row-start-1">{menuItem.Name}</p>
+                  <p className="col-start-1 row-start-2">£{menuItem.Price}</p>
                   <p>{menuItem.Description}</p>
                   {menuItem.ImageUrl && (
-                    <div className="w-32 border-4">
+                    <div className="flex col-start-2 row-start-1 row-end-4 rounded overflow-hidden">
                       <Image
                         src={menuItem.ImageUrl}
                         alt={menuItem.Description}
-                        width="100%"
-                        height="100%"
+                        width="100"
+                        height="100"
                       />
                     </div>
                   )}

@@ -8,10 +8,11 @@
 - [ ] Handle `isMasterOptionSet` to handle as standalone product
 - [ ] Handle ignoring `MenuSectionItem` when `isMasterOptionSet` is true
 - [ ] Format currency
+- [ ] Use FD colours
+- [ ] Lazy load images
 
 - amend README with scripts
 - deploy to Vercel
-- use Next images
 - SSR for SEO
 - Is Tailwind really a dev dependency?
 - preserve aspect ratio
