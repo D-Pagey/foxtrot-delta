@@ -1,8 +1,10 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
+import axios from "axios";
 import Head from "next/head";
-import Image from "next/image";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
+  console.log({ props });
+
   return (
     <div>
       <Head>
@@ -19,3 +21,17 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { data } = await axios.get(
+    "https://menus.flipdish.co/prod/16798/e6220da2-c34a-4ea2-bb51-a3e190fc5f08.json"
+  );
+
+  console.log(data);
+
+  return {
+    props: {
+      chicken: "dinner",
+    },
+  };
+};

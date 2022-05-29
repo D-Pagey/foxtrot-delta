@@ -1,0 +1,109 @@
+type MenuItemOptionSetItem = {
+  MenuItemOptionSetItemId: number;
+  Name: string | null;
+  Price: number;
+  TaxRateId: null;
+  TaxRate: null;
+  TaxValue: number;
+  IsAvailable: boolean;
+  DisplayOrder: number;
+  IsDeleted: boolean;
+  Tags: any[];
+  NextMenuItemOptionSetId: null;
+  PublicId: string;
+  ImageName: string | null;
+  ImageUrl: string | null;
+  CellAspectRatio: number;
+  CellLayoutType: number;
+  OptionSetItemMetadata: [];
+};
+
+type MenuItemOptionSet = {
+  Name: string | null;
+  MenuItemOptionSetId: number;
+  IsMasterOptionSet: boolean;
+  DisplayOrder: number;
+  MinSelectCount: number;
+  MaxSelectCount: number;
+  IsDeleted: boolean;
+  PublicId: string;
+  MenuItemOptionSetItems: MenuItemOptionSetItem[];
+  ImageName: string | null;
+  ImageUrl: string | null;
+  CellAspectRatio: number;
+  CellLayoutType: number;
+  MinPrice: number;
+  MenuItemId: number;
+  MenuItemOptionSetMetadata: any[]; // not sure what this is
+};
+
+type MenuItem = {
+  MenuItemId: number;
+  Name: string;
+  Description: string;
+  SpicinessRating: number;
+  Price: number;
+  DisplayOrder: number;
+  IsDeleted: boolean;
+  Alcohol: boolean;
+  Tags: any[];
+  PublicId: string;
+  isAvailable: boolean;
+  MenuItemOptionSets: MenuItemOptionSet[];
+  TaxRate: null;
+  TaxRateId: null;
+  TaxValue: number;
+  MenuSectionId: number;
+  ImageName: string;
+  ImageUrl: string;
+  CellAspectRatio: number;
+  CellLayoutType: number;
+  ActualPrice: number;
+  DisableVouchers: boolean;
+  ExcludeFromVoucherDiscounting: boolean;
+  DailySpecialHours: any[]; // not sure what this is
+  PriceCanIncrease: boolean;
+  MenuItemMetadata: any[]; // not sure what this is
+};
+
+type MenuSection = {
+  MenuSectionId: number;
+  Name: string;
+  Description: string | null;
+  DisplayOrder: number;
+  MenuItems: MenuItem[];
+  PublicId: string;
+  IsDeleted: boolean;
+  IsAvailable: boolean;
+  IsHiddenFromUsers: boolean;
+  ImageName: string;
+  ImageUrl: string;
+  CellAspectRatio: number;
+  CellLayoutType: number;
+  MenuSectionAvailability: {
+    MenuSectionId: number;
+    AvailableTimes:
+      | {
+          BusinessHoursPeriodId: number;
+          DayOfWeek: number;
+          StartTime: string;
+          Period: string;
+          StartTimeEarly: string;
+          PeriodEarly: string;
+        }[]
+      | null;
+    AvailabilityMode: number;
+  };
+  ConcessionStoreId: null;
+  MenuSectionMetadata: any[]; // not sure what this is
+};
+
+export type Menu = {
+  MenuId: number;
+  MenuVersionNumber: number;
+  VersionGuid: string;
+  MenuSections: MenuSection[];
+  MenuSectionBehaviour: number;
+  DisplaySectionLinks: boolean;
+  ConcessionStores: any[]; // not sure what this is
+};
